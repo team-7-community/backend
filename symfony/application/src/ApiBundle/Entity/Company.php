@@ -31,6 +31,13 @@ class Company
     private $description;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255)
+     */
+    private $name;
+
+    /**
      * @var \DateTime
      * @Assert\NotBlank()
      *
@@ -146,6 +153,30 @@ class Company
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set X0
+     *
+     * @param string $name
+     *
+     * @return Company
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get Name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     /**

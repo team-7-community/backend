@@ -22,7 +22,7 @@ class Employee
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $score;
+    private $id;
 
     /**
      * @var \DateTime
@@ -39,6 +39,14 @@ class Employee
      * @ORM\Column(name="modified", type="datetime")
      */
     private $modified;
+
+    /**
+     * @var int
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="score", type="integer")
+     */
+    private $score;
 
 
     /**
