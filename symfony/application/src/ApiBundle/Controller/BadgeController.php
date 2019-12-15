@@ -9,7 +9,6 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Class BadgeController
@@ -30,7 +29,7 @@ class BadgeController extends AbstractController
     const BRONZE_GEN_BADGE = [0, 10];
 
     /**
-     * @Route("/{company}/{type}/generate", name="api_badge")
+     * @Route("/{company}/{type}", name="api_badge")
      * @Method("GET")
      * @param Request $request, Company $company, string $type
      * @return Response
@@ -88,14 +87,11 @@ class BadgeController extends AbstractController
                 } break;
             }
 
-//            var_dump($percent_friendly);
-//            var_dump($scores);
-//            var_dump($totalEmployees);
-
-            return $this->render('ApiBundle:Default:index.html.twig', [
+            return $this->render("ApiBundle:{$type}:{$badgeType}.html.twig", [
                 'score' => $finalScore,
                 'type' => $scoreTypePretty,
                 'badgeType' => $badgeType,
+                'companyName' => $company->getName()
             ]);
 
         } catch (\Exception $ex) {

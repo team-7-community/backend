@@ -40,7 +40,9 @@ class EmployeeController extends AbstractController
             if (($requestContent['score'])) {
                 $employee = new Employee();
                 $employee
-                    ->setScore($requestContent['score'])
+                    ->setScore0($requestContent['score0'])
+                    ->setScore1($requestContent['score1'])
+                    ->setScore2($requestContent['score2'])
                     ->setCreated(new \DateTime('now'))
                     ->setModified(new \DateTime('now'))
                     ->setCompany($company);
