@@ -48,6 +48,16 @@ class Employee
      */
     private $score;
 
+    /**
+     * @Assert\NotBlank()
+     *
+     * Many Badges have One Company
+     *
+     * @ORM\ManyToOne(targetEntity="Company", inversedBy="badges")
+     * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
+     */
+    private $company;
+
 
     /**
      * Set score
@@ -112,6 +122,30 @@ class Employee
     public function getModified()
     {
         return $this->modified;
+    }
+
+    /**
+     * Set company
+     *
+     * @param Company $company
+     *
+     * @return Employee
+     */
+    public function setCompany($company)
+    {
+        $this->company = $company;
+
+        return $this;
+    }
+
+    /**
+     * Get company
+     *
+     * @return Company
+     */
+    public function getCompany()
+    {
+        return $this->company;
     }
 
 }
