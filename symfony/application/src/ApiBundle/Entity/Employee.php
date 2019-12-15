@@ -44,9 +44,34 @@ class Employee
      * @var int
      * @Assert\NotBlank()
      *
-     * @ORM\Column(name="score", type="integer")
+     * @ORM\Column(name="score0", type="boolean")
      */
-    private $score;
+    private $score0;
+
+    /**
+     * @var int
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="score1", type="boolean")
+     */
+    private $score1;
+
+    /**
+     * @var int
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="score2", type="boolean")
+     */
+    private $score2;
+
+    /**
+     * @var int
+     * @Assert\NotBlank()
+     *
+     * @ORM\Column(name="score3", type="boolean")
+     */
+    private $score3;
+
 
     /**
      * @Assert\NotBlank()
@@ -60,25 +85,92 @@ class Employee
 
 
     /**
-     * Set score
+     * Set score0
      *
-     * @param int $score
+     * @param boolean $score0
      *
      * @return Employee
      */
-    public function setScore($score)
+    public function setScore0($score0)
     {
-        $this->score = $score;
+        $this->score0 = $score0;
 
         return $this;
     }
 
     /**
-     * @return int
+     * @return boolean
      */
-    public function getScore()
+    public function getScore0()
     {
-        return $this->score;
+        return $this->score0;
+    }
+
+    /**
+     * Set score1
+     *
+     * @param boolean $score1
+     *
+     * @return Employee
+     */
+    public function setScore1($score1)
+    {
+        $this->score1 = $score1;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getScore1()
+    {
+        return $this->score1;
+    }
+
+
+    /**
+     * Set score2
+     *
+     * @param boolean $score2
+     *
+     * @return Employee
+     */
+    public function setScore2($score2)
+    {
+        $this->score2 = $score2;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getScore2()
+    {
+        return $this->score2;
+    }
+
+    /**
+     * Set score3
+     *
+     * @param boolean $score3
+     *
+     * @return Employee
+     */
+    public function setScore3($score3)
+    {
+        $this->score3 = $score3;
+
+        return $this;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getScore3()
+    {
+        return $this->score3;
     }
 
     /**
