@@ -21,7 +21,7 @@ class EmployeeController extends AbstractController
 {
     /**
      * @Route("/add", name="api_employee")
-     * @Method("POST")
+     * @Method({"POST", "OPTIONS"})
      * @param Request $request
      * @return JsonResponse
      */
@@ -37,7 +37,7 @@ class EmployeeController extends AbstractController
                 ->getRepository('ApiBundle:Company')
                 ->find($requestContent['company']);
 
-            if (($requestContent['score'])) {
+            if (($requestContent['score0'])) {
                 $employee = new Employee();
                 $employee
                     ->setScore0($requestContent['score0'])

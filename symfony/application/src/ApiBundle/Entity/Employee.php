@@ -65,15 +65,6 @@ class Employee
     private $score2;
 
     /**
-     * @var int
-     * @Assert\NotBlank()
-     *
-     * @ORM\Column(name="score3", type="boolean")
-     */
-    private $score3;
-
-
-    /**
      * @Assert\NotBlank()
      *
      * Many Badges have One Company
@@ -149,28 +140,6 @@ class Employee
     public function getScore2()
     {
         return $this->score2;
-    }
-
-    /**
-     * Set score3
-     *
-     * @param boolean $score3
-     *
-     * @return Employee
-     */
-    public function setScore3($score3)
-    {
-        $this->score3 = $score3;
-
-        return $this;
-    }
-
-    /**
-     * @return boolean
-     */
-    public function getScore3()
-    {
-        return $this->score3;
     }
 
     /**
